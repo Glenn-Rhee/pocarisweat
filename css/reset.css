@@ -34,6 +34,7 @@ body {
     /* 1 */
     line-height: inherit;
     background-color: oklch(0.968 0.007 247.896);
+    overflow-x: hidden;
     /* 2 */
 }
 
