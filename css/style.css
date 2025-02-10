@@ -128,13 +128,8 @@ nav #item {
     width: 100%;
 }
 
-nav .sign-in {
-    color: white;
-    font-weight: 700;
-    font-size: 17;
-    border: 1px solid white;
-    border-radius: 6px;
-    padding: 5px 16px;
+nav img {
+    border-radius: 100%;
 }
 
 /* Styling Home/Landing page */
@@ -326,7 +321,7 @@ nav .sign-in {
 
 /* Styling Inside section */
 #inside {
-    margin-top: 140px;
+    /* margin-top: 140px; */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -424,17 +419,36 @@ nav .sign-in {
 /* Styling footer */
 footer {
     width: 100%;
-    height: 70px;
+    height: 100px;
+    padding: 1px 4rem;
     background-color: var(--cornflowerBlue);
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    color: white;
+    font-weight: 600;
+}
+
+footer .socials {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    margin-top: 8px;
+}
+
+footer .socials .square-socials {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 100%;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-weight: 600;
 }
 
 /* Animation */

@@ -19,7 +19,20 @@ const shapeAbout = document.querySelector("#about .shape-about")
 const sectInside = document.querySelector("#inside")
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("ok")
+    const gapY = window.scrollY
+    if (gapY >= -90 && gapY <= 467) {
+        itemsNavbar[0].classList.add("active")
+        itemsNavbar[1].classList.remove("active")
+        itemsNavbar[2].classList.remove("active")
+    } else if (gapY >= 468 && gapY <= 1233) {
+        itemsNavbar[0].classList.remove("active")
+        itemsNavbar[1].classList.add("active")
+        itemsNavbar[2].classList.remove("active")
+    } else if (gapY >= 1234) {
+        itemsNavbar[0].classList.remove("active")
+        itemsNavbar[1].classList.remove("active")
+        itemsNavbar[2].classList.add("active")
+    }
 })
 
 // Melakukan sebuah aksi ketika Btn Reset di klik
@@ -41,7 +54,9 @@ function handleNavbar(e) {
     const hrefAttribute = this.querySelector("a").getAttribute("href");
     const container = document.querySelector(hrefAttribute);
     const gapFromTop = container.getBoundingClientRect().top + window.scrollY - 100;
-    window.scrollTo({ behavior: "auto", top: gapFromTop })
+    setTimeout(() => {
+        window.scrollTo({ behavior: "auto", top: gapFromTop })
+    }, 100);
 }
 
 // Fungsi untuk menghandle aksi scroll
@@ -93,18 +108,24 @@ function handleScroll() {
 
     // Active and Nonaktif navbar
     console.log(gapY)
-    if (gapY >= -90 && gapY <= 772) {
-        itemsNavbar[0].classList.add("active")
-        itemsNavbar[1].classList.remove("active")
-        itemsNavbar[2].classList.remove("active")
-    } else if (gapY >= 773 && gapY < 1659) {
-        itemsNavbar[0].classList.remove("active")
-        itemsNavbar[1].classList.add("active")
-        itemsNavbar[2].classList.remove("active")
-    } else if (gapY >= 1660) {
-        itemsNavbar[0].classList.remove("active")
-        itemsNavbar[1].classList.remove("active")
-        itemsNavbar[2].classList.add("active")
+    if (gapY >= -90 && gapY <= 467) {
+        setTimeout(() => {
+            itemsNavbar[0].classList.add("active")
+            itemsNavbar[1].classList.remove("active")
+            itemsNavbar[2].classList.remove("active")
+        }, 200);
+    } else if (gapY >= 468 && gapY <= 1233) {
+        setTimeout(() => {
+            itemsNavbar[0].classList.remove("active")
+            itemsNavbar[1].classList.add("active")
+            itemsNavbar[2].classList.remove("active")
+        }, 200);
+    } else if (gapY >= 1234) {
+        setTimeout(() => {
+            itemsNavbar[0].classList.remove("active")
+            itemsNavbar[1].classList.remove("active")
+            itemsNavbar[2].classList.add("active")
+        }, 200);
     }
     // if (gapY - 120 < 773) {
     //     console.log("ok")
