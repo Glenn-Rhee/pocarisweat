@@ -24,6 +24,12 @@ const subHeaderInside = document.querySelectorAll("#inside .main-content .square
 const textsInside = document.querySelectorAll("#inside .main-content .square p");
 const shapesInside = document.querySelectorAll("#inside .main-content .square")
 
+
+// Meangambil DOM Kelompok 
+const headersKelompok = document.querySelector("#kelompok h2")
+const imagesKelompok = document.querySelectorAll("#kelompok .anggota img")
+const textesKelompok = document.querySelectorAll("#kelompok .anggota span")
+
 // Melakukan sesuatu ketika halaman terloaded
 document.addEventListener("DOMContentLoaded", () => {
     const gapY = window.scrollY
@@ -115,7 +121,6 @@ function handleScroll() {
     }
 
     // On/Off animation inside
-    console.log(gapY)
     if (gapY > 1097) {
         headerInside.classList.add("show");
         textInside.classList.add("show");
@@ -161,6 +166,35 @@ function handleScroll() {
             setTimeout(() => {
                 shapesInside[i].classList.remove("show")
             }, 100 * i);
+        })
+    }
+
+    // On Off animation kelompok 
+    if (gapY >= 1924) {
+        headersKelompok.classList.add("show")
+        imagesKelompok.forEach((_, i) => {
+            setTimeout(() => {
+                imagesKelompok[i].classList.add("show")
+            }, 100 * i + 50);
+        })
+        textesKelompok.forEach((_, i) => {
+            setTimeout(() => {
+                textesKelompok[i].classList.add("show")
+            }, 100 * i + 50);
+
+        })
+    } else {
+        headersKelompok.classList.remove("show");
+        imagesKelompok.forEach((_, i) => {
+            setTimeout(() => {
+                imagesKelompok[i].classList.remove("show")
+            }, 100 * i + 50);
+        });
+        textesKelompok.forEach((_, i) => {
+            setTimeout(() => {
+                textesKelompok[i].classList.remove("show")
+            }, 100 * i + 50);
+
         })
     }
 

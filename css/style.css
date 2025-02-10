@@ -130,6 +130,9 @@ nav #item {
 
 nav img {
     border-radius: 100%;
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
 }
 
 /* Styling Home/Landing page */
@@ -321,7 +324,7 @@ nav img {
 
 /* Styling Inside section */
 #inside {
-    margin-bottom: 14rem;
+    margin-bottom: 10rem;
     width: 100%;
     padding: 50px 1px;
     display: flex;
@@ -445,6 +448,66 @@ nav img {
     background-color: #71CAFF;
 }
 
+/* Kelompok styling */
+#kelompok {
+    margin-bottom: 14rem;
+}
+
+#kelompok h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--mineShaft);
+    text-align: center;
+    animation: headerHide .6s ease-out forwards;
+}
+
+#kelompok h2.show {
+    animation: headerShow .6s ease-in forwards;
+}
+
+#kelompok .container-anggota {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    margin-top: 20px;
+}
+
+#kelompok .content-anggota {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#kelompok .anggota {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#kelompok .anggota img {
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    animation: imgKelompokHide .7s ease-out forwards;
+}
+
+#kelompok .anggota img.show {
+    animation: imgKelompokShow .7s ease-in forwards;
+}
+
+#kelompok .anggota span {
+    color: oklch(0.446 0.043 257.281);
+    font-weight: 600;
+    font-size: 22px;
+    opacity: 0;
+    transform: translateX(50px);
+    animation: textKelompokHide .6s ease-out forwards;
+}
+
+#kelompok .anggota span.show {
+    animation: textKelompokShow .6s ease-in forwards;
+    animation-delay: .6s;
+}
 
 /* Styling footer */
 footer {
@@ -708,5 +771,61 @@ footer .socials .square-socials {
 
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes imgKelompokShow {
+    0% {
+        transform: translateY(-80px);
+        opacity: .3;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes imgKelompokHide {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-80px);
+        opacity: .3;
+    }
+}
+
+@keyframes textKelompokShow {
+    0% {
+        display: none;
+    }
+
+    50% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes textKelompokHide {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+
+    100% {
+        display: none;
     }
 }
