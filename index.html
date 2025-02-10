@@ -11,9 +11,9 @@
       type="image/x-icon"
     />
     <!-- Memanggil file reset.css -->
-    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
     <!-- Memanggil file style.css -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -32,9 +32,9 @@
       <button class="sign-in">Sign in</button>
     </nav>
 
-    <!-- Landing page -->
     <div class="container">
-      <section id="home" class="container">
+      <!-- Landing page -->
+      <section id="home" class="">
         <svg
           id="shape"
           xmlns="http://www.w3.org/2000/svg"
@@ -69,11 +69,58 @@
           </div>
         </div>
       </section>
+
       <!-- Section About -->
-      <section id="about" class="container">
+      <section id="about" class="">
         <div class="about-left">
-          <div class="shape-about" />
-          <div class="container-image"></div>
+          <div class="shape-about"></div>
+          <div class="images-about">
+            <div class="first part">
+              <div>
+                <img
+                  src="/assets/img/about-1.jpg"
+                  width="250px"
+                  alt="Product Picture 1"
+                />
+              </div>
+              <div>
+                <img
+                  src="/assets/img/about-2.jpg"
+                  width="250px"
+                  alt="Product Picture 2"
+                />
+              </div>
+            </div>
+            <div class="second part">
+              <div>
+                <img
+                  src="/assets/img/about-4.jpg"
+                  width="250px"
+                  alt="Product Picture 4"
+                />
+              </div>
+              <div>
+                <img
+                  src="/assets/img/about-3.jpg"
+                  width="250px"
+                  alt="Product Picture 3"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-right">
+          <h3>About Us</h3>
+          <p>
+            Pocari Sweat adalah minuman isotonik yang dirancang untuk membantu
+            menghidrasi tubuh dan menggantikan cairan serta elektrolit yang
+            hilang saat berkeringat. Dengan kandungan seperti air, natrium,
+            kalium, dan glukosa, Pocari Sweat membantu menjaga keseimbangan
+            cairan tubuh dan memberikan energi cepat. Minuman ini sering
+            dikonsumsi setelah beraktivitas fisik atau di kondisi panas untuk
+            mencegah dehidrasi.
+          </p>
+          <a href="#inside">Find more</a>
         </div>
       </section>
     </div>
@@ -95,6 +142,6 @@
         <path d="m18 15-6-6-6 6" />
       </svg>
     </button>
-    <script src="index.js"></script>
+    <script src="/js/index.js"></script>
   </body>
 </html>

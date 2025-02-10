@@ -47,6 +47,7 @@ nav {
     padding-top: 30px;
     background-color: transparent;
     position: static;
+    /* z-index: 90; */
 }
 
 nav.floating {
@@ -91,6 +92,8 @@ nav #item {
     transition: all;
     transition-duration: 200ms;
     font-size: 18px;
+    position: relative;
+    z-index: 9999;
 }
 
 #item li:hover {
@@ -135,16 +138,12 @@ nav .sign-in {
 
 /* Styling Home/Landing page */
 #home {
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    top: 0;
-    left: 0;
-    right: 0;
     overflow-y: hidden;
-    z-index: -10
+    z-index: -1
 }
 
 #shape {
@@ -211,25 +210,78 @@ nav .sign-in {
 
 /* Styling about section  */
 #about {
-    margin-top: 120vh;
-    margin-bottom: 100rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 10px;
-    height: 200px;
-    background-color: red;
-    /* position: relative;
-    z-index: -99; */
+    width: 100%;
+    height: 750px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    row-gap: 14px;
 }
 
-/* #about .about-left {
+#about .about-left {
     position: relative;
-} */
-/* 
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+#about .about-right {
+    width: 50%;
+    padding: 22px 14px;
+}
+
 #about .shape-about {
+    width: 580px;
+    height: 260px;
+    border-top-right-radius: 120px;
+    border-bottom-right-radius: 120px;
+    background-color: var(--cornflowerBlue);
+}
 
-} */
+#about .images-about {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-left: 40px;
+    display: flex;
+    column-gap: 18px;
+    align-items: center;
+    /* background-color: blue; */
+}
 
+#about .part {
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+}
+
+#about .part img {
+    border-radius: 16px;
+}
+
+#about .about-right h3 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--mineShaft);
+}
+
+#about .about-right p {
+    font-size: 22px;
+    font-weight: 500;
+    color: oklch(0.446 0.043 257.281);
+    margin: 14px 0;
+}
+
+#about .about-right a {
+    display: inline-block;
+    font-size: 20px;
+    margin-top: 14px;
+    font-weight: 600;
+    color: white;
+    background-color: var(--cornflowerBlue);
+    padding: 8px 22px;
+    border-radius: 20px;
+}
 
 /* Animation */
 @keyframes headingHero {
