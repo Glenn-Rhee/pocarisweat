@@ -2,12 +2,12 @@ const btnReset = document.querySelector(".btn-reset")
 const navbar = document.querySelector("nav")
 const itemsNavbar = document.querySelectorAll("#item li")
 
-// DOM Landing page
+// mengambil DOM Landing page
 const headerHero = document.querySelector(".hero h1");
 const imgHero = document.querySelector(".hero img")
 const shapeHero = document.querySelector(".hero .shape-hero")
 
-// DOM About
+// mengambil DOM About
 const sectAbout = document.querySelector("#about");
 const headerAbout = document.querySelector("#about .about-right h3")
 const textAbout = document.querySelector("#about .about-right p")
@@ -15,9 +15,16 @@ const btnAbout = document.querySelector("#about .about-right a");
 const imagesAbout = document.querySelectorAll("#about .part img")
 const shapeAbout = document.querySelector("#about .shape-about")
 
-// Dom Inside
+// mengambil Dom Inside
 const sectInside = document.querySelector("#inside")
+const headerInside = document.querySelector("#inside .header-inside h3")
+const textInside = document.querySelector("#inside .header-inside p")
+const imagesInside = document.querySelectorAll(".main-content .container-content img");
+const subHeaderInside = document.querySelectorAll("#inside .main-content .square h4")
+const textsInside = document.querySelectorAll("#inside .main-content .square p");
+const shapesInside = document.querySelectorAll("#inside .main-content .square")
 
+// Melakukan sesuatu ketika halaman terloaded
 document.addEventListener("DOMContentLoaded", () => {
     const gapY = window.scrollY
     if (gapY >= -90 && gapY <= 467) {
@@ -41,6 +48,7 @@ btnReset.addEventListener("click", handleReset)
 // Melakukan sebuah aksi ketika halaman di scroll
 window.addEventListener("scroll", handleScroll)
 
+// Melkaukan sebuah aksi ketika salah satu item navbar di klik
 itemsNavbar.forEach(e => {
     e.addEventListener("click", handleNavbar)
 })
@@ -106,8 +114,57 @@ function handleScroll() {
         })
     }
 
-    // Active and Nonaktif navbar
+    // On/Off animation inside
     console.log(gapY)
+    if (gapY > 1097) {
+        headerInside.classList.add("show");
+        textInside.classList.add("show");
+        imagesInside.forEach((_, i) => {
+            setTimeout(() => {
+                imagesInside[i].classList.add("show")
+            }, 100 * i);
+        })
+        subHeaderInside.forEach((_, i) => {
+            setTimeout(() => {
+                subHeaderInside[i].classList.add("show")
+            }, 100 * i);
+        })
+        textsInside.forEach((_, i) => {
+            setTimeout(() => {
+                textsInside[i].classList.add("show")
+            }, 100 * i);
+        })
+        shapesInside.forEach((_, i) => {
+            setTimeout(() => {
+                shapesInside[i].classList.add("show")
+            }, 100 * i);
+        })
+    } else {
+        headerInside.classList.remove("show");
+        textInside.classList.remove("show");
+        imagesInside.forEach((_, i) => {
+            setTimeout(() => {
+                imagesInside[i].classList.remove("show")
+            }, 100 * i);
+        })
+        subHeaderInside.forEach((_, i) => {
+            setTimeout(() => {
+                subHeaderInside[i].classList.remove("show")
+            }, 100 * i);
+        })
+        textsInside.forEach((_, i) => {
+            setTimeout(() => {
+                textsInside[i].classList.remove("show")
+            }, 100 * i);
+        })
+        shapesInside.forEach((_, i) => {
+            setTimeout(() => {
+                shapesInside[i].classList.remove("show")
+            }, 100 * i);
+        })
+    }
+
+    // Active and Nonaktif navbar
     if (gapY >= -90 && gapY <= 467) {
         setTimeout(() => {
             itemsNavbar[0].classList.add("active")
@@ -127,13 +184,6 @@ function handleScroll() {
             itemsNavbar[2].classList.add("active")
         }, 200);
     }
-    // if (gapY - 120 < 773) {
-    //     console.log("ok")
-    // } else if (gapY - 120 < 1663) {
-    //     console.log("cihuyt")
-    // } else if (gapY - 120 > 1663) {
-    //     console.log("mantap")
-    // }
 }
 
 // Fungsi untuk menghandle tombol reset

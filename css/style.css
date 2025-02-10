@@ -283,11 +283,11 @@ nav img {
     font-size: 36px;
     font-weight: 700;
     color: var(--mineShaft);
-    animation: headerAboutHide .5s ease-out forwards;
+    animation: headerHide .5s ease-out forwards;
 }
 
 #about .about-right h3.show {
-    animation: headerAboutShow .5s ease-in forwards;
+    animation: headerShow .5s ease-in forwards;
 }
 
 #about .about-right p {
@@ -321,8 +321,9 @@ nav img {
 
 /* Styling Inside section */
 #inside {
-    /* margin-top: 140px; */
+    margin-bottom: 14rem;
     width: 100%;
+    padding: 50px 1px;
     display: flex;
     justify-content: center;
     height: 750px;
@@ -343,6 +344,11 @@ nav img {
     font-size: 36px;
     font-weight: 700;
     color: var(--mineShaft);
+    animation: headerHide .6s ease-out forwards;
+}
+
+#inside .header-inside h3.show {
+    animation: headerShow .6s ease-in forwards;
 }
 
 #inside .header-inside p {
@@ -350,6 +356,11 @@ nav img {
     font-weight: 500;
     color: oklch(0.446 0.043 257.281);
     margin-top: 12px;
+    animation: textHide .6s ease-out forwards;
+}
+
+#inside .header-inside p.show {
+    animation: textShow .6s ease-in forwards;
 }
 
 #inside .main-content {
@@ -367,7 +378,6 @@ nav img {
     display: flex;
     align-items: end;
     position: relative;
-    /* justify-self: center; */
 }
 
 .main-content .container-content img {
@@ -379,6 +389,11 @@ nav img {
     left: 50%;
     transform: translateX(-50%);
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    animation: shapeHide .6s ease-out forwards;
+}
+
+.main-content .container-content img.show {
+    animation: shapeShow .6s ease-in forwards;
 }
 
 #inside .main-content .square {
@@ -386,6 +401,11 @@ nav img {
     width: 100%;
     border-radius: 25px;
     overflow: hidden;
+    animation: shapeHide .4s ease-out forwards;
+}
+
+#inside .main-content .square.show {
+    animation: shapeShow .4s ease-in forwards;
 }
 
 #inside .main-content .square h4 {
@@ -393,6 +413,11 @@ nav img {
     text-align: center;
     font-weight: 700;
     font-size: 24px;
+    animation: headerHide .6s ease-out forwards;
+}
+
+#inside .main-content .square h4.show {
+    animation: headerShow .6s ease-in forwards;
 }
 
 #inside .main-content .square p {
@@ -401,6 +426,11 @@ nav img {
     font-size: 17px;
     padding: 1px 10px;
     color: oklch(0.446 0.043 257.281);
+    animation: textHide .6s ease-out forwards;
+}
+
+#inside .main-content .square p.show {
+    animation: textShow .6s ease-in forwards;
 }
 
 #inside .container-content:first-child .square {
@@ -564,7 +594,7 @@ footer .socials .square-socials {
     }
 }
 
-@keyframes headerAboutShow {
+@keyframes headerShow {
     0% {
         transform: translateY(-50px);
         opacity: .3;
@@ -576,7 +606,7 @@ footer .socials .square-socials {
     }
 }
 
-@keyframes headerAboutHide {
+@keyframes headerHide {
     0% {
         transform: translateY(0);
         opacity: 1;
